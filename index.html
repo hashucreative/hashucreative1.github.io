@@ -3,217 +3,224 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>HASH CREATIVE</title>
+<title>HASHU CREATIVE</title>
 
 <style>
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
     scroll-behavior: smooth;
 }
 
 body {
+    margin: 0;
     font-family: Arial, sans-serif;
-    background: #0b0b12;
+    background: #080b12;
     color: white;
 }
 
 header {
+    background: #0d111c;
+    padding: 18px;
     position: sticky;
     top: 0;
-    z-index: 100;
-    background: rgba(11,11,18,0.95);
-    border-bottom: 1px solid #25253a;
-    padding: 18px 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    z-index: 1000;
+    border-bottom: 1px solid #202838;
 }
 
 .logo {
     font-size: 25px;
     font-weight: bold;
-    letter-spacing: 2px;
+    color: #00eaff;
 }
 
-.logo span {
-    color: #00e5ff;
+nav {
+    margin-top: 12px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    margin-left: 20px;
-    font-size: 15px;
+    margin-right: 15px;
+    font-size: 14px;
 }
 
 nav a:hover {
-    color: #00e5ff;
+    color: #00eaff;
 }
 
 .hero {
-    min-height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     text-align: center;
-    padding: 40px 20px;
-    background:
-        radial-gradient(circle at top, #17245c, #0b0b12 55%);
+    padding: 90px 20px;
+    background: linear-gradient(135deg, #081018, #111827);
 }
 
 .hero h1 {
-    font-size: clamp(45px, 10vw, 90px);
-    letter-spacing: 5px;
-}
-
-.hero h1 span {
-    color: #00e5ff;
+    font-size: 48px;
+    margin: 0;
+    color: #00eaff;
 }
 
 .hero p {
+    font-size: 18px;
+    color: #c7d0dd;
     max-width: 650px;
     margin: 20px auto;
-    color: #bdbdcc;
-    font-size: 18px;
     line-height: 1.6;
 }
 
 .button {
     display: inline-block;
-    padding: 14px 25px;
-    margin-top: 15px;
-    border-radius: 30px;
-    background: #00e5ff;
-    color: #071014;
+    padding: 13px 25px;
+    background: #00eaff;
+    color: #001016;
     text-decoration: none;
+    border-radius: 8px;
     font-weight: bold;
+    margin-top: 15px;
 }
 
 section {
-    padding: 80px 8%;
+    padding: 65px 20px;
+    max-width: 1100px;
+    margin: auto;
 }
 
-.section-title {
+h2 {
     text-align: center;
-    font-size: 35px;
-    margin-bottom: 40px;
+    color: #00eaff;
+    font-size: 32px;
+    margin-bottom: 35px;
 }
 
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-}
-
-.card {
-    background: #151522;
-    padding: 30px;
-    border: 1px solid #29293d;
-    border-radius: 18px;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-7px);
-    border-color: #00e5ff;
-}
-
-.card h3 {
-    margin-bottom: 12px;
-    color: #00e5ff;
-}
-
-.card p {
-    color: #bdbdcc;
-    line-height: 1.5;
-}
-
-.portfolio {
+.services {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
     gap: 20px;
 }
 
-.work {
-    height: 180px;
-    border-radius: 18px;
-    background: linear-gradient(135deg, #20204a, #10101c);
-    border: 1px solid #30304b;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
+.card {
+    background: #111722;
+    border: 1px solid #273246;
+    padding: 25px;
+    border-radius: 12px;
+    transition: 0.3s;
 }
 
-.work h3 {
-    font-size: 22px;
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #00eaff;
 }
 
-.prices {
+.card h3 {
+    color: #00eaff;
+}
+
+.card p {
+    color: #b8c2d0;
+    line-height: 1.5;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.portfolio {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
 }
 
-.price {
-    background: #151522;
-    border: 1px solid #29293d;
-    border-radius: 18px;
-    padding: 30px;
-    text-align: center;
+.portfolio-box {
+    height: 160px;
+    background: #111722;
+    border: 1px dashed #40506a;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8995a8;
 }
 
-.price h3 {
-    color: #00e5ff;
-    margin-bottom: 15px;
+.prices {
+    max-width: 700px;
+    margin: auto;
 }
 
-.price .amount {
-    font-size: 30px;
-    font-weight: bold;
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 18px;
     margin-bottom: 10px;
+    background: #111722;
+    border-radius: 8px;
+    border: 1px solid #273246;
 }
 
-.price p {
-    color: #aaaabb;
-}
-
-.contact {
-    text-align: center;
-    background: #10101b;
-}
-
-.contact p {
-    color: #bbb;
-    margin: 15px auto;
+form {
     max-width: 600px;
+    margin: auto;
+    background: #111722;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #273246;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 13px;
+    margin: 8px 0 15px;
+    background: #080b12;
+    border: 1px solid #354158;
+    color: white;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background: #00eaff;
+    color: #001016;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #00c7dc;
+}
+
+.contact-text {
+    text-align: center;
+    color: #b8c2d0;
     line-height: 1.6;
 }
 
 footer {
     text-align: center;
     padding: 25px;
-    border-top: 1px solid #25253a;
-    color: #77778a;
-    font-size: 14px;
+    background: #0d111c;
+    color: #7f8a9c;
+    margin-top: 40px;
 }
 
-@media (max-width: 650px) {
-    header {
-        flex-direction: column;
-        gap: 12px;
+@media(max-width:600px) {
+    .hero h1 {
+        font-size: 36px;
     }
 
     nav a {
-        margin: 0 7px;
         font-size: 13px;
+        margin-right: 8px;
     }
 }
 </style>
@@ -222,158 +229,246 @@ footer {
 <body>
 
 <header>
-    <div class="logo">HASH <span>CREATIVE</span></div>
+    <div class="logo">HASHU CREATIVE</div>
 
     <nav>
         <a href="#home">Home</a>
         <a href="#services">Services</a>
         <a href="#portfolio">Portfolio</a>
         <a href="#prices">Prices</a>
-        <a href="#contact">Contact</a>
+        <a href="#booking">Book</a>
     </nav>
 </header>
 
+
 <section class="hero" id="home">
-    <div>
-        <h1>HASH <span>CREATIVE</span></h1>
 
-        <p>
-            Creative digital designs for creators, gamers,
-            students and small businesses.
-        </p>
-
-        <a class="button" href="#services">Explore Services</a>
-    </div>
-</section>
-
-<section id="services">
-    <h2 class="section-title">Our Services</h2>
-
-    <div class="cards">
-
-        <div class="card">
-            <h3>🎮 Gaming Graphics</h3>
-            <p>
-                Eye-catching gaming thumbnails,
-                banners and graphics.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>▶️ YouTube Thumbnails</h3>
-            <p>
-                Attractive thumbnails designed
-                to make your videos stand out.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>📱 Social Posters</h3>
-            <p>
-                Modern posters for social media,
-                announcements and promotions.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>🎬 Video Editing</h3>
-            <p>
-                Simple and creative video editing
-                for short-form and gaming content.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>✨ Logo Design</h3>
-            <p>
-                Clean and simple logos for
-                creators and small projects.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>🏫 Event Posters</h3>
-            <p>
-                Posters for school events,
-                clubs and special occasions.
-            </p>
-        </div>
-
-    </div>
-</section>
-
-<section id="portfolio">
-    <h2 class="section-title">Our Portfolio</h2>
-
-    <div class="portfolio">
-
-        <div class="work">
-            <h3>🎮 Gaming Thumbnail<br>Sample</h3>
-        </div>
-
-        <div class="work">
-            <h3>🔥 YouTube<br>Design</h3>
-        </div>
-
-        <div class="work">
-            <h3>⚡ Gaming<br>Banner</h3>
-        </div>
-
-        <div class="work">
-            <h3>🚀 Social Media<br>Poster</h3>
-        </div>
-
-    </div>
-</section>
-
-<section id="prices">
-    <h2 class="section-title">Starter Prices</h2>
-
-    <div class="prices">
-
-        <div class="price">
-            <h3>Thumbnail</h3>
-            <div class="amount">₹49+</div>
-            <p>Simple YouTube thumbnail.</p>
-        </div>
-
-        <div class="price">
-            <h3>Poster</h3>
-            <div class="amount">₹79+</div>
-            <p>Social media or event poster.</p>
-        </div>
-
-        <div class="price">
-            <h3>Logo</h3>
-            <div class="amount">₹99+</div>
-            <p>Simple custom logo.</p>
-        </div>
-
-        <div class="price">
-            <h3>Video Edit</h3>
-            <div class="amount">₹149+</div>
-            <p>Basic short video editing.</p>
-        </div>
-
-    </div>
-</section>
-
-<section class="contact" id="contact">
-    <h2 class="section-title">Let's Create Something</h2>
+    <h1>HASHU CREATIVE</h1>
 
     <p>
-        Have a design idea? Contact HASH CREATIVE
-        and let's turn your idea into something awesome.
+        Creative digital services for YouTubers, gamers, students,
+        creators and small businesses.
     </p>
 
-    <a class="button" href="mailto:hashcreative@example.com">
-        Contact HASH CREATIVE
-    </a>
+    <a class="button" href="#booking">Book a Service</a>
+
 </section>
 
+
+<section id="services">
+
+<h2>Our Services</h2>
+
+<div class="services">
+
+<div class="card">
+<h3>🎮 Gaming Graphics</h3>
+<p>
+Gaming thumbnails, banners, profile graphics and promotional designs
+for gaming creators.
+</p>
+<div class="price">From ₹49</div>
+</div>
+
+
+<div class="card">
+<h3>▶️ YouTube Thumbnails</h3>
+<p>
+Eye-catching thumbnails designed to make your videos look professional
+and attract viewers.
+</p>
+<div class="price">From ₹49</div>
+</div>
+
+
+<div class="card">
+<h3>📱 Social Media Posters</h3>
+<p>
+Posters and promotional graphics for Instagram, WhatsApp and other
+social media platforms.
+</p>
+<div class="price">From ₹79</div>
+</div>
+
+
+<div class="card">
+<h3>🎬 Video Editing</h3>
+<p>
+Basic gaming edits, short videos, transitions, text, music syncing
+and social-media video editing.
+</p>
+<div class="price">From ₹149</div>
+</div>
+
+
+<div class="card">
+<h3>✨ Simple Logo Design</h3>
+<p>
+Clean and simple logo concepts for creators, school projects,
+clubs and small businesses.
+</p>
+<div class="price">From ₹99</div>
+</div>
+
+
+<div class="card">
+<h3>🎉 Event Posters</h3>
+<p>
+Posters for school events, gaming events, birthdays, competitions
+and other occasions.
+</p>
+<div class="price">From ₹79</div>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="portfolio">
+
+<h2>Our Portfolio</h2>
+
+<div class="portfolio">
+
+<div class="portfolio-box">
+Your Thumbnail
+</div>
+
+<div class="portfolio-box">
+Your Poster
+</div>
+
+<div class="portfolio-box">
+Your Logo
+</div>
+
+<div class="portfolio-box">
+Your Video Edit
+</div>
+
+</div>
+
+</section>
+
+
+<section id="prices">
+
+<h2>Starting Prices</h2>
+
+<div class="prices">
+
+<div class="price-row">
+<span>YouTube Thumbnail</span>
+<strong>₹49+</strong>
+</div>
+
+<div class="price-row">
+<span>Social Media Poster</span>
+<strong>₹79+</strong>
+</div>
+
+<div class="price-row">
+<span>Event Poster</span>
+<strong>₹79+</strong>
+</div>
+
+<div class="price-row">
+<span>Simple Logo</span>
+<strong>₹99+</strong>
+</div>
+
+<div class="price-row">
+<span>Video Editing</span>
+<strong>₹149+</strong>
+</div>
+
+</div>
+
+<p class="contact-text">
+Final pricing may depend on the complexity of the project.
+</p>
+
+</section>
+
+
+<section id="booking">
+
+<h2>Book a Service</h2>
+
+<form action="mailto:YOUR-EMAIL@example.com"
+      method="post"
+      enctype="text/plain">
+
+<label>Your Name</label>
+<input type="text" name="Name" required>
+
+
+<label>Choose a Service</label>
+
+<select name="Service" required>
+
+<option value="">Select a service</option>
+
+<option>YouTube Thumbnail</option>
+
+<option>Gaming Graphics</option>
+
+<option>Social Media Poster</option>
+
+<option>Video Editing</option>
+
+<option>Logo Design</option>
+
+<option>Event Poster</option>
+
+</select>
+
+
+<label>Your Email</label>
+
+<input type="email"
+       name="Customer Email"
+       required>
+
+
+<label>Tell us what you need</label>
+
+<textarea
+name="Project Details"
+placeholder="Describe your project..."
+required></textarea>
+
+
+<button type="submit">
+Send Booking Request
+</button>
+
+</form>
+
+</section>
+
+
+<section>
+
+<h2>Contact HASHU CREATIVE</h2>
+
+<p class="contact-text">
+
+Have a project in mind?<br>
+Send us a booking request and we'll get back to you.
+
+</p>
+
+</section>
+
+
 <footer>
-    © 2026 HASH CREATIVE — Creative Digital Studio
+
+© 2026 HASHU CREATIVE — Creative Digital Studio
+
 </footer>
+
 
 </body>
 </html>
