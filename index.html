@@ -23,7 +23,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(5, 11, 20, 0.95);
+    background: rgba(5, 11, 20, 0.96);
     border-bottom: 1px solid #00eaff;
     padding: 15px 8%;
     display: flex;
@@ -156,7 +156,8 @@ table {
     background: #0b1625;
 }
 
-th, td {
+th,
+td {
     padding: 15px;
     border: 1px solid #174056;
     text-align: left;
@@ -175,7 +176,14 @@ th {
     border: 1px solid #174056;
 }
 
-input, select, textarea {
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input,
+select,
+textarea {
     width: 100%;
     padding: 13px;
     margin: 8px 0 18px;
@@ -218,6 +226,7 @@ footer {
 }
 
 @media (max-width: 700px) {
+
     header {
         flex-direction: column;
         gap: 12px;
@@ -242,6 +251,7 @@ footer {
 <body>
 
 <header>
+
     <div class="logo">HASHU CREATIVE</div>
 
     <nav>
@@ -251,6 +261,7 @@ footer {
         <a href="#prices">Prices</a>
         <a href="#book">Book</a>
     </nav>
+
 </header>
 
 
@@ -261,15 +272,17 @@ footer {
     <h1>HASHU CREATIVE</h1>
 
     <p>
-        Creative designs for gamers, creators, students,
-        events and social media.
+        Creative designs for gamers, creators,
+        students, events and social media.
     </p>
 
     <p>
         🎨 Design • 🎬 Editing • 🎮 Gaming Graphics
     </p>
 
-    <a href="#book" class="btn">Book a Service</a>
+    <a href="#book" class="btn">
+        Book a Service
+    </a>
 
 </section>
 
@@ -473,7 +486,9 @@ footer {
 
             <select id="service" required>
 
-                <option value="">Select a service</option>
+                <option value="">
+                    Select a service
+                </option>
 
                 <option>YouTube Thumbnail</option>
                 <option>Gaming Graphics</option>
@@ -503,7 +518,10 @@ footer {
                 required
             ></textarea>
 
-            <button type="submit" class="btn">
+            <button
+                type="submit"
+                class="btn"
+            >
                 Send Booking Request
             </button>
 
@@ -512,26 +530,32 @@ footer {
 
         <!-- SUCCESS MESSAGE -->
 
-        <div class="success" id="successMessage">
+        <div
+            class="success"
+            id="successMessage"
+        >
 
-            <h3>✅ Booking Request Received!</h3>
+            <h3>
+                ✅ Booking Request Ready!
+            </h3>
 
             <p>
-                Thank you for choosing HASHU CREATIVE.
+                WhatsApp will open with your
+                booking details.
             </p>
 
             <p>
-                For more details, please text us on WhatsApp:
+                Please press <b>Send</b> in WhatsApp
+                to send your request.
+            </p>
+
+            <p>
+                For more details, please text us:
             </p>
 
             <div class="whatsapp-number">
                 📱 +91 9150144123
             </div>
-
-            <p>
-                We will discuss your project and confirm
-                the details with you.
-            </p>
 
         </div>
 
@@ -553,26 +577,87 @@ footer {
 
 <script>
 
-document.getElementById("bookingForm").addEventListener("submit", function(event) {
+document.getElementById("bookingForm").addEventListener(
+    "submit",
+    function(event) {
 
-    event.preventDefault();
+        event.preventDefault();
 
-    const name = document.getElementById("name").value;
-    const service = document.getElementById("service").value;
-    const email = document.getElementById("email").value;
-    const details = document.getElementById("details").value;
+        const name =
+            document.getElementById("name").value.trim();
 
-    console.log("Booking Request:");
-    console.log("Name:", name);
-    console.log("Service:", service);
-    console.log("Email:", email);
-    console.log("Details:", details);
+        const service =
+            document.getElementById("service").value;
 
-    document.getElementById("bookingForm").style.display = "none";
+        const email =
+            document.getElementById("email").value.trim();
 
-    document.getElementById("successMessage").style.display = "block";
+        const details =
+            document.getElementById("details").value.trim();
 
-});
+
+        /*
+         * Your WhatsApp number.
+         * Country code +91.
+         * No +, spaces or dashes in the link.
+         */
+
+        const whatsappNumber = "919150144123";
+
+
+        /*
+         * Booking message that will appear
+         * inside WhatsApp.
+         */
+
+        const message =
+`🔔 HASHU CREATIVE - NEW BOOKING
+
+👤 Name: ${name}
+
+🎨 Service: ${service}
+
+📧 Email: ${email}
+
+📝 Project Details:
+${details}
+
+Thank you for choosing HASHU CREATIVE!`;
+
+
+        /*
+         * Create WhatsApp link.
+         */
+
+        const whatsappURL =
+            "https://wa.me/" +
+            whatsappNumber +
+            "?text=" +
+            encodeURIComponent(message);
+
+
+        /*
+         * Show confirmation on the website.
+         */
+
+        document.getElementById(
+            "bookingForm"
+        ).style.display = "none";
+
+        document.getElementById(
+            "successMessage"
+        ).style.display = "block";
+
+
+        /*
+         * Open WhatsApp with the
+         * booking information.
+         */
+
+        window.location.href = whatsappURL;
+
+    }
+);
 
 </script>
 
