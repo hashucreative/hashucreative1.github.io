@@ -7,40 +7,33 @@
 <title>HASHU CREATIVE</title>
 
 <style>
-
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
     scroll-behavior: smooth;
 }
 
 body {
+    margin: 0;
     font-family: Arial, sans-serif;
-    background: #05070d;
+    background: #050b14;
     color: white;
 }
-
-/* HEADER */
 
 header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(5,7,13,0.95);
-    border-bottom: 1px solid #00ffff;
-    padding: 15px 25px;
+    background: rgba(5, 11, 20, 0.95);
+    border-bottom: 1px solid #00eaff;
+    padding: 15px 8%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .logo {
-    color: #00ffff;
-    font-size: 22px;
+    color: #00eaff;
+    font-size: 24px;
     font-weight: bold;
 }
 
@@ -48,14 +41,15 @@ nav a {
     color: white;
     text-decoration: none;
     margin-left: 18px;
-    font-size: 14px;
 }
 
 nav a:hover {
-    color: #00ffff;
+    color: #00eaff;
 }
 
-/* HERO */
+section {
+    padding: 70px 8%;
+}
 
 .hero {
     min-height: 90vh;
@@ -64,244 +58,190 @@ nav a:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 30px;
     background:
-        radial-gradient(circle at center, #102b35 0%, #05070d 60%);
+        radial-gradient(circle at center, #102d45, #050b14 65%);
 }
 
 .hero h1 {
-    font-size: 55px;
-    color: #00ffff;
-    margin-bottom: 15px;
-    text-shadow: 0 0 20px #00ffff;
+    font-size: 60px;
+    color: #00eaff;
+    margin: 0;
 }
 
 .hero p {
-    font-size: 18px;
-    color: #cccccc;
-    max-width: 650px;
-    margin-bottom: 30px;
+    font-size: 20px;
+    max-width: 700px;
+    line-height: 1.6;
 }
 
-.button {
+.btn {
     display: inline-block;
-    background: #00ffff;
-    color: #001010;
     padding: 14px 25px;
-    border-radius: 10px;
+    margin-top: 15px;
+    background: #00eaff;
+    color: #001018;
     text-decoration: none;
     font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
 }
 
-.button:hover {
-    background: white;
+.btn:hover {
+    transform: scale(1.05);
 }
 
-/* SECTIONS */
-
-.section {
-    padding: 70px 25px;
-    max-width: 1100px;
-    margin: auto;
-}
-
-.section h2 {
+h2 {
     text-align: center;
+    color: #00eaff;
     font-size: 35px;
-    color: #00ffff;
     margin-bottom: 40px;
 }
 
-/* SERVICES */
-
 .services {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 20px;
-}
-
-.service {
-    background: #0b1018;
-    border: 1px solid #16323a;
-    border-radius: 15px;
-    padding: 25px;
-    transition: 0.3s;
-}
-
-.service:hover {
-    transform: translateY(-5px);
-    border-color: #00ffff;
-    box-shadow: 0 0 20px rgba(0,255,255,0.2);
-}
-
-.service h3 {
-    color: #00ffff;
-    margin-bottom: 12px;
-}
-
-.service p {
-    color: #bbbbbb;
-    line-height: 1.5;
-}
-
-.price {
-    margin-top: 15px;
-    font-weight: bold;
-    color: white;
-}
-
-/* PORTFOLIO */
-
-.portfolio {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
 }
 
+.card {
+    background: #0b1625;
+    border: 1px solid #123a50;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    border-color: #00eaff;
+    box-shadow: 0 0 20px rgba(0, 234, 255, 0.2);
+}
+
+.card h3 {
+    color: #00eaff;
+}
+
+.card p {
+    line-height: 1.5;
+}
+
+.price {
+    color: #00ff9d;
+    font-weight: bold;
+}
+
+.portfolio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
 .portfolio-box {
     height: 180px;
-    background: #0b1018;
-    border: 1px dashed #00ffff;
-    border-radius: 15px;
+    background: #0b1625;
+    border: 1px dashed #00eaff;
+    border-radius: 12px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    color: #00eaff;
     text-align: center;
-    color: #00ffff;
 }
 
-/* PRICES */
-
-.price-table {
+table {
     width: 100%;
     border-collapse: collapse;
-    background: #0b1018;
-    border-radius: 15px;
-    overflow: hidden;
+    background: #0b1625;
 }
 
-.price-table th,
-.price-table td {
+th, td {
     padding: 15px;
-    border-bottom: 1px solid #203039;
+    border: 1px solid #174056;
     text-align: left;
 }
 
-.price-table th {
-    color: #00ffff;
+th {
+    color: #00eaff;
 }
 
-/* BOOKING */
-
-.booking-box {
+.booking {
     max-width: 650px;
     margin: auto;
-    background: #0b1018;
-    border: 1px solid #00ffff;
-    border-radius: 18px;
+    background: #0b1625;
     padding: 30px;
-    box-shadow: 0 0 25px rgba(0,255,255,0.12);
+    border-radius: 15px;
+    border: 1px solid #174056;
 }
 
-.booking-box input,
-.booking-box select,
-.booking-box textarea {
+input, select, textarea {
     width: 100%;
-    padding: 14px;
-    margin-bottom: 15px;
-    background: #05070d;
+    padding: 13px;
+    margin: 8px 0 18px;
+    background: #07101c;
     color: white;
-    border: 1px solid #263b42;
-    border-radius: 8px;
-    outline: none;
+    border: 1px solid #24516a;
+    border-radius: 7px;
 }
 
-.booking-box input:focus,
-.booking-box select:focus,
-.booking-box textarea:focus {
-    border-color: #00ffff;
+textarea {
+    height: 130px;
+    resize: vertical;
 }
 
-.booking-box button {
-    width: 100%;
-    padding: 15px;
-    background: #00ffff;
-    color: #001010;
-    border: none;
-    border-radius: 8px;
+.success {
+    display: none;
+    margin-top: 25px;
+    padding: 20px;
+    background: #09251d;
+    border: 1px solid #00ff9d;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.success h3 {
+    color: #00ff9d;
+}
+
+.whatsapp-number {
+    font-size: 22px;
+    color: #00eaff;
     font-weight: bold;
-    font-size: 16px;
-    cursor: pointer;
 }
-
-.booking-box button:hover {
-    background: white;
-}
-
-.success-message {
-    display: none;
-    background: #092d25;
-    border: 1px solid #00ffb3;
-    color: #00ffb3;
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.error-message {
-    display: none;
-    background: #351010;
-    border: 1px solid #ff5555;
-    color: #ff7777;
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-/* FOOTER */
 
 footer {
     text-align: center;
     padding: 30px;
-    border-top: 1px solid #16323a;
-    color: #888;
+    border-top: 1px solid #123a50;
+    color: #aaa;
 }
 
-/* MOBILE */
-
 @media (max-width: 700px) {
-
     header {
         flex-direction: column;
         gap: 12px;
     }
 
     nav a {
-        margin: 0 6px;
-        font-size: 12px;
+        margin: 0 5px;
+        font-size: 14px;
     }
 
     .hero h1 {
-        font-size: 40px;
+        font-size: 42px;
     }
 
-    .hero p {
-        font-size: 16px;
+    section {
+        padding: 55px 5%;
     }
-
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-
 <header>
-
     <div class="logo">HASHU CREATIVE</div>
 
     <nav>
@@ -311,102 +251,105 @@ footer {
         <a href="#prices">Prices</a>
         <a href="#book">Book</a>
     </nav>
-
 </header>
 
 
-<!-- HERO -->
+<!-- HOME -->
 
 <section class="hero" id="home">
 
     <h1>HASHU CREATIVE</h1>
 
     <p>
-        Creative digital designs for gaming, YouTube,
-        social media, events and more.
+        Creative designs for gamers, creators, students,
+        events and social media.
     </p>
 
-    <a class="button" href="#book">Book a Service</a>
+    <p>
+        🎨 Design • 🎬 Editing • 🎮 Gaming Graphics
+    </p>
+
+    <a href="#book" class="btn">Book a Service</a>
 
 </section>
 
 
 <!-- SERVICES -->
 
-<section class="section" id="services">
+<section id="services">
 
     <h2>Our Services</h2>
 
     <div class="services">
 
-        <div class="service">
+        <div class="card">
             <h3>🎮 Gaming Graphics</h3>
             <p>
-                Gaming thumbnails, banners, profile graphics
+                Thumbnails, banners, profile graphics
                 and promotional designs.
             </p>
             <div class="price">From ₹49</div>
         </div>
 
-        <div class="service">
+        <div class="card">
             <h3>▶️ YouTube Thumbnails</h3>
             <p>
-                Eye-catching thumbnails designed to make
-                your videos stand out.
+                Eye-catching thumbnails for your
+                YouTube videos.
             </p>
             <div class="price">From ₹49</div>
         </div>
 
-        <div class="service">
+        <div class="card">
             <h3>📱 Social Media Posters</h3>
             <p>
-                Posters and graphics for social media,
-                announcements and promotions.
+                Creative posters for social media
+                and online promotions.
             </p>
             <div class="price">From ₹79</div>
         </div>
 
-        <div class="service">
+        <div class="card">
             <h3>🎬 Video Editing</h3>
             <p>
-                Basic gaming edits, transitions, text,
-                music syncing and social video editing.
+                Basic gaming edits, transitions,
+                text, music syncing and social videos.
             </p>
             <div class="price">From ₹149</div>
         </div>
 
-        <div class="service">
+        <div class="card">
             <h3>✨ Simple Logo Design</h3>
             <p>
-                Clean and simple logos for channels,
-                small projects and brands.
+                Simple and clean logos for creators,
+                channels and small projects.
             </p>
             <div class="price">From ₹99</div>
         </div>
 
-        <div class="service">
+        <div class="card">
             <h3>🎉 Event Posters</h3>
             <p>
-                Posters for school events, celebrations,
-                programs and special occasions.
+                Posters for school events,
+                celebrations and programs.
             </p>
             <div class="price">From ₹79</div>
         </div>
 
-        <div class="service">
+        <div class="card">
             <h3>💌 Invitation Creation</h3>
             <p>
-                Attractive invitations for birthdays,
-                celebrations, events and special occasions.
+                Digital invitations for events
+                and special occasions.
             </p>
             <div class="price">From ₹79</div>
         </div>
 
-        <div class="service">
+        <div class="card">
             <h3>🎨 Custom Design</h3>
             <p>
-                Custom designs created according to
-                your ideas and requirements.
+                Tell us your idea and we'll create
+                a design based on your requirements.
             </p>
             <div class="price">From ₹79</div>
         </div>
@@ -418,7 +361,7 @@ footer {
 
 <!-- PORTFOLIO -->
 
-<section class="section" id="portfolio">
+<section id="portfolio">
 
     <h2>Portfolio</h2>
 
@@ -430,12 +373,12 @@ footer {
         </div>
 
         <div class="portfolio-box">
-            🎨<br>
+            🖼️<br>
             Your Poster
         </div>
 
         <div class="portfolio-box">
-            ✨<br>
+            🖼️<br>
             Your Logo
         </div>
 
@@ -451,11 +394,11 @@ footer {
 
 <!-- PRICES -->
 
-<section class="section" id="prices">
+<section id="prices">
 
     <h2>Starting Prices</h2>
 
-    <table class="price-table">
+    <table>
 
         <tr>
             <th>Service</th>
@@ -509,163 +452,125 @@ footer {
 
 <!-- BOOKING -->
 
-<section class="section" id="book">
+<section id="book">
 
     <h2>Book a Service</h2>
 
-    <div class="booking-box">
-
-        <div id="successMessage" class="success-message">
-            ✅ Booking request sent successfully!
-            We will contact you soon.
-        </div>
-
-        <div id="errorMessage" class="error-message">
-            ❌ Something went wrong. Please try again.
-        </div>
+    <div class="booking">
 
         <form id="bookingForm">
 
+            <label>Your Name</label>
+
             <input
                 type="text"
-                name="Name"
-                placeholder="Your Name"
+                id="name"
+                placeholder="Enter your name"
                 required
             >
 
-            <select name="Service" required>
+            <label>Choose Service</label>
 
-                <option value="">
-                    Select a Service
-                </option>
+            <select id="service" required>
 
-                <option value="Gaming Graphics">
-                    Gaming Graphics
-                </option>
+                <option value="">Select a service</option>
 
-                <option value="YouTube Thumbnail">
-                    YouTube Thumbnail
-                </option>
-
-                <option value="Social Media Poster">
-                    Social Media Poster
-                </option>
-
-                <option value="Video Editing">
-                    Video Editing
-                </option>
-
-                <option value="Simple Logo Design">
-                    Simple Logo Design
-                </option>
-
-                <option value="Event Poster">
-                    Event Poster
-                </option>
-
-                <option value="Invitation Creation">
-                    Invitation Creation
-                </option>
-
-                <option value="Custom Design">
-                    Custom Design
-                </option>
+                <option>YouTube Thumbnail</option>
+                <option>Gaming Graphics</option>
+                <option>Social Media Poster</option>
+                <option>Video Editing</option>
+                <option>Simple Logo Design</option>
+                <option>Event Poster</option>
+                <option>Invitation Creation</option>
+                <option>Custom Design</option>
 
             </select>
 
+            <label>Email</label>
+
             <input
                 type="email"
-                name="Email"
-                placeholder="Your Email"
+                id="email"
+                placeholder="Enter your email"
                 required
             >
 
+            <label>Project Details</label>
+
             <textarea
-                name="Project Details"
-                rows="6"
-                placeholder="Tell us about your project..."
+                id="details"
+                placeholder="Tell us what you want..."
                 required
             ></textarea>
 
-            <button type="submit" id="submitButton">
-                🚀 Send Booking Request
+            <button type="submit" class="btn">
+                Send Booking Request
             </button>
 
         </form>
+
+
+        <!-- SUCCESS MESSAGE -->
+
+        <div class="success" id="successMessage">
+
+            <h3>✅ Booking Request Received!</h3>
+
+            <p>
+                Thank you for choosing HASHU CREATIVE.
+            </p>
+
+            <p>
+                For more details, please text us on WhatsApp:
+            </p>
+
+            <div class="whatsapp-number">
+                📱 +91 9150144123
+            </div>
+
+            <p>
+                We will discuss your project and confirm
+                the details with you.
+            </p>
+
+        </div>
 
     </div>
 
 </section>
 
 
-<!-- FOOTER -->
-
 <footer>
 
-    © 2026 HASHU CREATIVE — Creative Digital Studio
+    © 2026 HASHU CREATIVE
+
+    <br><br>
+
+    Creative Designs • Video Editing • Gaming Graphics
 
 </footer>
 
 
-<!-- FORM SUBMISSION -->
-
 <script>
 
-const form = document.getElementById("bookingForm");
-const successMessage = document.getElementById("successMessage");
-const errorMessage = document.getElementById("errorMessage");
-const submitButton = document.getElementById("submitButton");
-
-form.addEventListener("submit", async function(event) {
+document.getElementById("bookingForm").addEventListener("submit", function(event) {
 
     event.preventDefault();
 
-    successMessage.style.display = "none";
-    errorMessage.style.display = "none";
+    const name = document.getElementById("name").value;
+    const service = document.getElementById("service").value;
+    const email = document.getElementById("email").value;
+    const details = document.getElementById("details").value;
 
-    submitButton.disabled = true;
-    submitButton.textContent = "Sending...";
+    console.log("Booking Request:");
+    console.log("Name:", name);
+    console.log("Service:", service);
+    console.log("Email:", email);
+    console.log("Details:", details);
 
-    const formData = new FormData(form);
+    document.getElementById("bookingForm").style.display = "none";
 
-    try {
-
-        const response = await fetch(
-            "https://formspree.io/f/YOUR_FORM_ID",
-            {
-                method: "POST",
-                body: formData,
-                headers: {
-                    "Accept": "application/json"
-                }
-            }
-        );
-
-        if (response.ok) {
-
-            form.reset();
-
-            successMessage.style.display = "block";
-
-            submitButton.disabled = false;
-            submitButton.textContent =
-                "🚀 Send Booking Request";
-
-        } else {
-
-            throw new Error("Form submission failed");
-
-        }
-
-    } catch (error) {
-
-        errorMessage.style.display = "block";
-
-        submitButton.disabled = false;
-        submitButton.textContent =
-            "🚀 Send Booking Request";
-
-    }
+    document.getElementById("successMessage").style.display = "block";
 
 });
 
