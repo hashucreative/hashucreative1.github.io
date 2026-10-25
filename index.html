@@ -1,143 +1,334 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>HASHU CREATIVE | Book a Service</title>
-  <style>
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      padding: 24px 14px;
-      background: #0b0d14;
-      color: #f5f5f7;
-      font-family: Arial, sans-serif;
-    }
-
-    .container {
-      max-width: 560px;
-      margin: 30px auto;
-      padding: 26px;
-      background: #171a25;
-      border: 1px solid #303445;
-      border-radius: 18px;
-    }
-
-    h1 { color: #f5c76a; margin-top: 0; }
-    p { color: #c2c5d1; line-height: 1.6; }
-
-    label {
-      display: block;
-      margin: 17px 0 7px;
-      font-weight: bold;
-    }
-
-    input, select, textarea {
-      width: 100%;
-      padding: 13px;
-      border: 1px solid #3b4053;
-      border-radius: 9px;
-      background: #0e111b;
-      color: white;
-      font: inherit;
-    }
-
-    textarea { min-height: 110px; resize: vertical; }
-
-    button {
-      width: 100%;
-      margin-top: 22px;
-      padding: 14px;
-      background: #f5c76a;
-      color: #17130b;
-      border: 0;
-      border-radius: 9px;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    button:hover { background: #ffda8a; }
-
-    .note { font-size: 13px; }
-    a { color: #f5c76a; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HASHU CREATIVE | Design. Create. Inspire.</title>
+<style>
+:root {
+  --bg:#08090d; --card:#141620; --gold:#f5c76b;
+  --text:#f7f7fa; --muted:#b0b3c0; --line:#2b2e3a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{margin:0;background:var(--bg);color:var(--text);
+font-family:Arial,Helvetica,sans-serif;line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{width:min(1100px,92%);margin:auto}
+header{position:sticky;top:0;z-index:10;background:#090a0ff2;
+border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;
+gap:18px;min-height:72px;flex-wrap:wrap}
+.logo{font-weight:900;letter-spacing:2px}
+.logo span,h1 span,.gold{color:var(--gold)}
+.links{display:flex;gap:18px;flex-wrap:wrap;font-size:14px;color:var(--muted)}
+.links a:hover{color:var(--gold)}
+.btn{display:inline-block;padding:12px 18px;border-radius:10px;
+border:1px solid var(--gold);background:var(--gold);color:#17120a;
+font-weight:bold;cursor:pointer}
+.btn:hover{filter:brightness(1.1);transform:translateY(-2px)}
+.btn.alt{background:transparent;color:var(--gold)}
+.hero{padding:85px 0;background:radial-gradient(ellipse at 85% 20%,#6b54221c,transparent 40%)}
+.heroGrid{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.tag{color:var(--gold);text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:bold}
+h1{font-size:clamp(42px,7vw,76px);line-height:1.03;letter-spacing:-2px;margin:20px 0}
+h2{font-size:clamp(29px,4vw,44px);line-height:1.15;margin:10px 0}
+h3{margin:8px 0}
+p{color:var(--muted)}
+.heroCard,.card,.formBox,.aboutBox{background:var(--card);border:1px solid var(--line);
+border-radius:18px;padding:24px}
+.heroCard{background:linear-gradient(145deg,#242016,#13151e)}
+.heroCard .big{font-size:38px;font-weight:900;color:var(--gold);line-height:1.2}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+.stat{padding:14px;border:1px solid var(--line);border-radius:12px}
+.stat strong{display:block}
+.stat span{color:var(--muted);font-size:13px}
+section{padding:70px 0}
+.sectionIntro{max-width:700px;margin-bottom:28px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{transition:.2s}
+.card:hover{transform:translateY(-3px);border-color:#8c713e}
+.icon{font-size:27px;color:var(--gold)}
+.card p{font-size:14px}
+.price{font-size:25px;color:var(--gold);font-weight:900}
+.portfolio{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.work{min-height:180px;border:1px solid #ffffff18;border-radius:16px;
+padding:20px;display:flex;flex-direction:column;justify-content:end;
+background:linear-gradient(145deg,#402044,#12131a)}
+.work:nth-child(2){background:linear-gradient(145deg,#59401d,#12131a)}
+.work:nth-child(3){background:linear-gradient(145deg,#17484b,#12131a)}
+.work:nth-child(4){background:linear-gradient(145deg,#57202d,#12131a)}
+.work:nth-child(5){background:linear-gradient(145deg,#35471f,#12131a)}
+.work:nth-child(6){background:linear-gradient(145deg,#293e67,#12131a)}
+.work small{color:var(--gold);text-transform:uppercase;letter-spacing:1px}
+.aboutGrid,.bookingGrid{display:grid;grid-template-columns:.8fr 1.2fr;gap:20px}
+.monogram{font-size:80px;color:var(--gold);font-weight:900}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.check{padding:12px;border:1px solid var(--line);border-radius:10px}
+form{background:var(--card);border:1px solid var(--line);padding:24px;border-radius:18px}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{display:flex;flex-direction:column;gap:6px}
+.full{grid-column:1/-1}
+label{font-size:14px;font-weight:bold}
+input,select,textarea{width:100%;padding:12px;border-radius:9px;
+border:1px solid #363947;background:#0b0c12;color:white;font:inherit}
+input:focus,select:focus,textarea:focus{outline:1px solid var(--gold)}
+textarea{min-height:110px;resize:vertical}
+.note{font-size:12px}
+.status{display:none;margin-top:15px;padding:14px;border-radius:10px;
+background:#15291f;border:1px solid #315b42;color:#d1f8dd;overflow-wrap:anywhere}
+.status.error{background:#351a1a;border-color:#754040;color:#ffd4d4}
+.contact{display:flex;justify-content:space-between;align-items:center;gap:20px;
+padding:28px;background:#19170f;border:1px solid #514229;border-radius:18px}
+footer{padding:25px 0;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.footerRow{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+@media(max-width:780px){
+ .heroGrid,.aboutGrid,.bookingGrid{grid-template-columns:1fr}
+ .grid,.portfolio{grid-template-columns:repeat(2,1fr)}
+ nav{padding:12px 0}.links{gap:12px}
+}
+@media(max-width:520px){
+ .grid,.portfolio,.fields,.checks,.stats{grid-template-columns:1fr}
+ .full{grid-column:auto}.hero{padding:55px 0}
+ section{padding:50px 0}.contact{align-items:flex-start;flex-direction:column}
+ h1{letter-spacing:-1px}
+}
+</style>
 </head>
-
 <body>
-  <main class="container">
-    <h1>HASHU CREATIVE</h1>
-    <p>Creative designs. Personal service. Let's build something great.</p>
 
-    <h2>Book a Service</h2>
+<header>
+<div class="container">
+<nav>
+<a class="logo" href="#home">HASHU <span>CREATIVE</span></a>
+<div class="links">
+<a href="#home">Home</a><a href="#services">Services</a>
+<a href="#pricing">Pricing</a><a href="#portfolio">Portfolio</a>
+<a href="#about">About</a><a href="#booking">Booking</a>
+</div>
+<a class="btn" href="#booking">Start a Project</a>
+</nav>
+</div>
+</header>
 
-    <form id="bookingForm">
-      <label for="name">Your name</label>
-      <input id="name" name="name" maxlength="80"
-             autocomplete="name" required>
+<main>
+<section class="hero" id="home">
+<div class="container heroGrid">
+<div>
+<span class="tag">Your ideas, designed better</span>
+<h1>Design that makes you <span>stand out.</span></h1>
+<p>Creative graphics, thumbnails, logos, posters, invitations and video editing — designed around your ideas.</p>
+<p><a class="btn" href="#booking">Book a Service →</a>
+<a class="btn alt" href="#portfolio">View Portfolio</a></p>
+</div>
+<div class="heroCard">
+<span class="tag">HASHU CREATIVE STUDIO</span>
+<div class="big">Ideas → Impact</div>
+<p>Creative solutions for content creators, small businesses and special occasions.</p>
+<div class="stats">
+<div class="stat"><strong>Graphics</strong><span>Thumbnails & posters</span></div>
+<div class="stat"><strong>Branding</strong><span>Logos & identity</span></div>
+<div class="stat"><strong>Editing</strong><span>Videos & reels</span></div>
+<div class="stat"><strong>Custom</strong><span>Your unique ideas</span></div>
+</div>
+</div>
+</div>
+</section>
 
-      <label for="phone">Phone number</label>
-      <input id="phone" name="phone" type="tel"
-             maxlength="25" autocomplete="tel"
-             placeholder="Enter your phone number"
-             pattern="[0-9+() -]{7,25}" required>
+<section id="services">
+<div class="container">
+<div class="sectionIntro"><span class="tag">Our services</span>
+<h2>What can we create for you?</h2>
+<p>Choose a service and tell us about your project.</p></div>
+<div class="grid">
+<div class="card"><div class="icon">▣</div><h3>YouTube Thumbnails</h3><p>Eye-catching thumbnails for gaming, videos and creators.</p><a class="btn alt" href="#booking" data-service="YouTube Thumbnail">Book service</a></div>
+<div class="card"><div class="icon">✦</div><h3>Logo Design</h3><p>Distinctive logo concepts for personal brands and businesses.</p><a class="btn alt" href="#booking" data-service="Logo Design">Book service</a></div>
+<div class="card"><div class="icon">▤</div><h3>Posters & Flyers</h3><p>Promotional posters, announcements and event graphics.</p><a class="btn alt" href="#booking" data-service="Poster / Flyer">Book service</a></div>
+<div class="card"><div class="icon">▶</div><h3>Video Editing</h3><p>Short videos, reels and edits based on your requirements.</p><a class="btn alt" href="#booking" data-service="Video Editing">Book service</a></div>
+<div class="card"><div class="icon">♡</div><h3>Invitations</h3><p>Personalised digital invitations for birthdays and events.</p><a class="btn alt" href="#booking" data-service="Invitation Design">Book service</a></div>
+<div class="card"><div class="icon">✎</div><h3>Custom Design</h3><p>Have another idea? Describe it and ask for a quote.</p><a class="btn alt" href="#booking" data-service="Custom Design">Book service</a></div>
+</div>
+</div>
+</section>
 
-      <label for="service">Choose a service</label>
-      <select id="service" name="service" required>
-        <option value="">Select a service</option>
-        <option>YouTube Thumbnail</option>
-        <option>Gaming Graphics</option>
-        <option>Social Media Poster</option>
-        <option>Event Poster</option>
-        <option>Invitation Design</option>
-        <option>Logo Design</option>
-        <option>Video Editing</option>
-        <option>Custom Design</option>
-      </select>
+<section id="pricing">
+<div class="container">
+<div class="sectionIntro"><span class="tag">Pricing</span><h2>Clear starting prices.</h2>
+<p>Final pricing depends on complexity and will be confirmed before work begins.</p></div>
+<div class="grid">
+<div class="card"><h3>YouTube Thumbnail</h3><div class="price">₹49</div><p>Starting price per design.</p><a class="btn alt" href="#booking" data-service="YouTube Thumbnail">Select</a></div>
+<div class="card"><h3>Logo Design</h3><div class="price">₹99</div><p>Starting price for a simple logo.</p><a class="btn alt" href="#booking" data-service="Logo Design">Select</a></div>
+<div class="card"><h3>Poster / Flyer</h3><div class="price">₹79</div><p>Starting price per design.</p><a class="btn alt" href="#booking" data-service="Poster / Flyer">Select</a></div>
+<div class="card"><h3>Video Editing</h3><div class="price">₹99</div><p>Starting price; depends on video length.</p><a class="btn alt" href="#booking" data-service="Video Editing">Select</a></div>
+<div class="card"><h3>Invitation Design</h3><div class="price">₹59</div><p>Starting price for digital invitations.</p><a class="btn alt" href="#booking" data-service="Invitation Design">Select</a></div>
+<div class="card"><h3>Custom Projects</h3><div class="price">Let's talk</div><p>Get a quote for your idea.</p><a class="btn alt" href="#booking" data-service="Custom Design">Get a quote</a></div>
+</div>
+<p class="note">Important: replace these sample prices with your real prices before publishing.</p>
+</div>
+</section>
 
-      <label for="details">Project details</label>
-      <textarea id="details" name="details" maxlength="1500"
-        placeholder="Describe what you need, your preferred style and deadline"
-        required></textarea>
+<section id="portfolio">
+<div class="container">
+<div class="sectionIntro"><span class="tag">Portfolio</span><h2>Creative concepts.</h2>
+<p>These are sample concept tiles. Replace them with your real work when available.</p></div>
+<div class="portfolio">
+<div class="work"><small>Gaming graphics</small><h3>Level Up</h3><p>Bold graphics for creators.</p></div>
+<div class="work"><small>Brand identity</small><h3>Stand Apart</h3><p>Simple, memorable branding.</p></div>
+<div class="work"><small>Posters</small><h3>Make It Known</h3><p>Promotional design concepts.</p></div>
+<div class="work"><small>Video editing</small><h3>Short-Form Energy</h3><p>Reels and creator content.</p></div>
+<div class="work"><small>Invitations</small><h3>Your Special Day</h3><p>Personalised celebration designs.</p></div>
+<div class="work"><small>Custom work</small><h3>Your Idea Here</h3><p>Let's build something original.</p></div>
+</div>
+</div>
+</section>
 
-      <button type="submit">Continue to WhatsApp</button>
-      <p class="note" id="message" aria-live="polite"></p>
-    </form>
-  </main>
+<section id="about">
+<div class="container aboutGrid">
+<div class="aboutBox"><span class="tag">About the studio</span>
+<div class="monogram">HC.</div><h3>HASHU CREATIVE</h3>
+<p>Creative thinking. Practical design.</p></div>
+<div class="aboutBox"><span class="tag">Why choose us?</span>
+<h2>Your idea matters.</h2>
+<p>We aim to turn your idea into a clear and attractive design. Share your reference, audience and goals so the work can fit your needs.</p>
+<div class="checks">
+<div class="check">✓ Customised work</div><div class="check">✓ Clear pricing</div>
+<div class="check">✓ Booking reference</div><div class="check">✓ Direct contact</div>
+</div></div>
+</div>
+</section>
 
-  <script>
-    // Replace this with your business WhatsApp number.
-    const BUSINESS_WHATSAPP = "919876543210";
+<section id="booking">
+<div class="container">
+<div class="sectionIntro"><span class="tag">Book a service</span>
+<h2>Tell us about your project.</h2>
+<p>Submit the form to create a booking request. WhatsApp will not open automatically.</p></div>
+<div class="bookingGrid">
+<div class="aboutBox">
+<span class="tag">Contact</span><h3>Let's make it happen.</h3>
+<p>Provide your requirements and preferred deadline. We'll review the request and confirm the next steps.</p>
+<hr>
+<strong>WhatsApp number</strong>
+<p id="whatsappDisplay">Set your number in the code</p>
+<p class="note">Do not enter passwords, payment-card details or other sensitive information.</p>
+</div>
+<form id="bookingForm">
+<div class="fields">
+<div class="field"><label for="name">Your name *</label><input id="name" name="name" required maxlength="100" placeholder="Full name"></div>
+<div class="field"><label for="phone">Phone number *</label><input id="phone" name="phone" required maxlength="20" type="tel" placeholder="Mobile number"></div>
+<div class="field"><label for="service">Service *</label>
+<select id="service" name="service" required>
+<option value="">Select service</option><option>YouTube Thumbnail</option>
+<option>Logo Design</option><option>Poster / Flyer</option>
+<option>Video Editing</option><option>Invitation Design</option><option>Custom Design</option>
+</select></div>
+<div class="field"><label for="budget">Budget</label>
+<select id="budget" name="budget"><option value="">Not sure yet</option>
+<option>Under ₹100</option><option>₹100–₹250</option><option>₹250–₹500</option><option>₹500+</option></select></div>
+<div class="field full"><label for="details">Project details *</label>
+<textarea id="details" name="details" required maxlength="2000" placeholder="Describe your idea, text, colours, size and requirements"></textarea></div>
+<div class="field"><label for="deadline">Preferred deadline</label><input id="deadline" name="deadline" type="date"></div>
+<div class="field"><label for="email">Email (optional)</label><input id="email" name="email" type="email" maxlength="150" placeholder="you@example.com"></div>
+<div class="field full"><label><input type="checkbox" id="consent" required style="width:auto"> I agree that Hashu Creative can use these details to respond to my request.</label></div>
+<div class="field full"><button class="btn" id="submitBtn" type="submit">Book Service →</button>
+<p class="note">The online database must be connected before this form can save bookings.</p></div>
+</div>
+<div id="status" class="status" role="status" aria-live="polite"></div>
+</form>
+</div>
+</div>
+</section>
 
-    document.getElementById("bookingForm")
-      .addEventListener("submit", function (event) {
-        event.preventDefault();
+<section>
+<div class="container contact">
+<div><span class="tag">Have a project in mind?</span><h2>Let's create something great.</h2>
+<p>Use the booking form to tell us what you need.</p></div>
+<a class="btn" href="#booking">Book a Service →</a>
+</div>
+</section>
+</main>
 
-        if (!this.reportValidity()) return;
+<footer><div class="container footerRow">
+<span>© <span id="year"></span> HASHU CREATIVE. All rights reserved.</span>
+<span>Design. Create. Inspire.</span>
+</div></footer>
 
-        const form = new FormData(this);
-        const name = form.get("name").trim();
-        const phone = form.get("phone").trim();
-        const service = form.get("service");
-        const details = form.get("details").trim();
+<script>
+/* SET THESE TWO SETTINGS BEFORE PUBLISHING.
+   WhatsApp number: country code and number only, no + or spaces.
+   Example format for India: 91 followed by your mobile number.
+*/
+const WHATSAPP_NUMBER = "91XXXXXXXXXX";
+const BOOKING_ENDPOINT = ""; // Paste your Google Apps Script Web App URL here.
 
-        const booking =
-          "HASHU CREATIVE - NEW BOOKING ENQUIRY\n\n" +
-          "Customer: " + name + "\n" +
-          "Phone: " + phone + "\n" +
-          "Service: " + service + "\n" +
-          "Project details: " + details + "\n\n" +
-          "Please confirm availability and price.";
+document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("whatsappDisplay").textContent =
+  WHATSAPP_NUMBER.includes("X") ? "Set your number in the code" : "+" + WHATSAPP_NUMBER;
 
-        const url = "https://wa.me/" + BUSINESS_WHATSAPP +
-          "?text=" + encodeURIComponent(booking);
+document.querySelectorAll("[data-service]").forEach(function(button){
+  button.addEventListener("click", function(){
+    document.getElementById("service").value = button.dataset.service;
+  });
+});
 
-        document.getElementById("message").textContent =
-          "WhatsApp will open. Send the message to submit your enquiry.";
+const form = document.getElementById("bookingForm");
+const statusBox = document.getElementById("status");
+const submitBtn = document.getElementById("submitBtn");
 
-        window.open(url, "_blank", "noopener");
-      });
-  </script>
+form.addEventListener("submit", async function(event){
+  event.preventDefault();
+  if (!form.reportValidity()) return;
+
+  if (!BOOKING_ENDPOINT) {
+    statusBox.className = "status error";
+    statusBox.style.display = "block";
+    statusBox.textContent =
+      "The booking form is not connected to the online database yet. No booking has been saved. Configure BOOKING_ENDPOINT before accepting bookings.";
+    return;
+  }
+
+  const data = {
+    customerName: document.getElementById("name").value.trim(),
+    phone: document.getElementById("phone").value.trim(),
+    service: document.getElementById("service").value,
+    budget: document.getElementById("budget").value,
+    details: document.getElementById("details").value.trim(),
+    deadline: document.getElementById("deadline").value,
+    email: document.getElementById("email").value.trim(),
+    source: "Hashu Creative Website"
+  };
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = "Submitting...";
+  try {
+    // The Google Apps Script endpoint must be deployed and tested first.
+    await fetch(BOOKING_ENDPOINT, {
+      method: "POST",
+      mode: "no-cors",
+      headers: {"Content-Type":"text/plain;charset=utf-8"},
+      body: JSON.stringify(data)
+    });
+
+    statusBox.className = "status";
+    statusBox.style.display = "block";
+    statusBox.replaceChildren();
+
+    const heading = document.createElement("strong");
+    heading.textContent = "Booking request sent";
+    const message = document.createElement("p");
+    message.textContent = "Please keep a note of your service request. WhatsApp contact: " +
+      (WHATSAPP_NUMBER.includes("X") ? "not configured yet" : "+" + WHATSAPP_NUMBER) +
+      ". We will contact you after reviewing the details.";
+    statusBox.append(heading, message);
+    form.reset();
+  } catch (error) {
+    statusBox.className = "status error";
+    statusBox.style.display = "block";
+    statusBox.textContent = "The request could not be sent. Check the internet connection and database endpoint, then try again.";
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Book Service →";
+  }
+});
+</script>
 </body>
 </html>
